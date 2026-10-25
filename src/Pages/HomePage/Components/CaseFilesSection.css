@@ -1,0 +1,235 @@
+.case-files-section {
+  padding: 24px max(22px, calc((100% - 1320px) / 2)) 28px;
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
+  background: #080808;
+}
+
+.case-files-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.case-files-eyebrow {
+  margin: 0 0 8px;
+  color: #c51b1b;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.case-files-heading h2 {
+  margin: 0;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(20px, 2.4vw, 30px);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.case-files-all-link {
+  display: inline-flex;
+  min-width: 130px;
+  min-height: 38px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: 1px solid #781212;
+  padding: 0 12px;
+  color: #e9e5df;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.case-files-all-link:hover,
+.case-files-all-link:focus-visible {
+  border-color: #a81313;
+  background: rgb(168 19 19 / 16%);
+}
+
+.case-files-all-link svg,
+.case-file-link svg {
+  width: 15px;
+  flex-shrink: 0;
+  stroke: #e31d1d;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+}
+
+.case-files-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.case-file-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  border: 1px solid rgb(255 255 255 / 10%);
+  background: #090909;
+  transition:
+    border-color 180ms ease,
+    transform 180ms ease;
+}
+
+.case-file-card:hover {
+  transform: translateY(-4px);
+  border-color: rgb(168 19 19 / 70%);
+}
+
+.case-file-image-wrap {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #151210;
+}
+
+.case-file-image-wrap::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(0 0 0 / 24%), transparent 45%);
+  content: '';
+  pointer-events: none;
+}
+
+.case-file-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 350ms ease;
+}
+
+.case-file-card:hover .case-file-image {
+  transform: scale(1.04);
+}
+
+.case-file-evidence {
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  left: 10px;
+  padding: 4px 6px;
+  background: rgb(120 17 15 / 88%);
+  color: #f0e9e2;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-file-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 11px 10px 12px;
+}
+
+.case-file-number {
+  margin: 0 0 6px;
+  color: #c51b1b;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-file-copy h3 {
+  margin: 0 0 8px;
+  color: #e9e5df;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(15px, 1.5vw, 19px);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.case-file-detail {
+  margin: 0 0 12px;
+  color: #96918b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.case-file-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: auto;
+  color: #c51b1b;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.case-file-link:hover,
+.case-file-link:focus-visible {
+  color: #f13a3a;
+}
+
+@media (max-width: 900px) {
+  .case-files-section {
+    padding-inline: 22px;
+  }
+
+  .case-files-grid {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .case-files-section {
+    padding: 24px 16px;
+  }
+
+  .case-files-heading {
+    align-items: flex-start;
+  }
+
+  .case-files-all-link {
+    min-width: 112px;
+    min-height: 34px;
+    padding-inline: 9px;
+    font-size: 8px;
+  }
+
+  .case-files-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .case-file-image-wrap {
+    aspect-ratio: 4 / 3;
+  }
+
+  .case-file-copy {
+    padding: 10px;
+  }
+
+  .case-file-copy h3 {
+    font-size: 16px;
+  }
+
+  .case-file-detail {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .case-file-card,
+  .case-file-image {
+    transition: none;
+  }
+}
